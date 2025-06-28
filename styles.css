@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    text-align: center;
+    user-select: none;
+    /* background: #F1C690; */
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+    color: #E48D21;
+    font-size: xx-large;
+    padding: 30px;
+}
+
+#navbar {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.head-links {
+    float: left;
+    text-decoration: none;
+    color: #D48D21;
+    border: 1px solid #D48D21;
+    border-radius: 5px;
+    padding: 3px 8px;
+}
+
+.head-links:hover {
+    cursor: pointer;
+    color: #B48D00;
+    border: 1px solid #B48D00;
+}
