@@ -50,6 +50,14 @@ h1 {
     font-weight: bold;
 } */
 
+ol {
+  list-style-position: inside;
+}
+
+li {
+    padding: 0;
+}
+
 .latex {
     font-family: monospace;
 }
