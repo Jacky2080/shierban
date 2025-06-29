@@ -2,6 +2,7 @@ body {
     margin: 0;
     text-align: center;
     user-select: none;
+    overflow: auto;
 }
 
 #header {
@@ -13,6 +14,7 @@ body {
     top: 0px;
     display: flex;
     justify-content: space-between; 
+    z-index: 999;
 }
 
 .home-links {
@@ -82,7 +84,7 @@ body {
 #content {
     width: 520px;
     max-width: 75%;
-    height: 600px;
+    height: 500px;
     position: relative;
     background-color: white;
     padding: 20px;
@@ -91,6 +93,12 @@ body {
     scrollbar-color: rgba(0,0,0,0.3) transparent;
     box-sizing: border-box;
     border-radius: 10px;
+}
+
+@media (max-height: 750px) {
+    #content {
+        max-height: 60%;
+    }
 }
 
 #contentHeader {
