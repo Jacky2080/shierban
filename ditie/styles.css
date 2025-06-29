@@ -62,7 +62,6 @@ body {
     width: 500px;
     max-width: 75%;
     height: 500px;
-    max-height: 50%;
     position: absolute;
     left: 0;
     right: 0;
@@ -79,6 +78,12 @@ body {
     scrollbar-color: rgba(0,0,0,0.3) transparent;
     transition: all 0.3s ease;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2)
+}
+
+@media (max-height: 750px) {
+    #content {
+        max-height: 50%;
+    }
 }
 
 #contentHeader {
