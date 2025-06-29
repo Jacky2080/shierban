@@ -93,22 +93,34 @@ function alertRepetition(name) {
     const top = prevAlert ? prevAlert.getBoundingClientRect().bottom + margin : 20;
     alertBox.style.top = `${top}px`;
     alertQueue.push(alertBox);
-
     setTimeout(() => {
-        closeAlert(alertBox);
-    }, 3000); 
+        closeAlertSequentially();
+    }, 1000);
 }
 
-function closeAlert(alertBox) {
-    const index = alertQueue.indexOf(alertBox);
-    if (index === -1) return;
-    alertQueue.splice(index, 1);
-    alertBox.addEventListener('transitionend', () => {
-        alertBox.remove();
-        alertQueue.slice(index).forEach((box, i) => {
-            const newTop = i === 0 ? 20 : alertQueue[i - 1].getBoundingClientRect().bottom + margin;
-            box.style.top = `${newTop}px`;
-        });
+async function closeAlertSequentially() {
+  while (alertQueue.length > 0) {
+    const currentAlert = alertQueue[0];
+    await moveAlertsUp();
+    await fadeOutAlert(currentAlert);
+    alertQueue.shift();
+    currentAlert.remove();
+  }
+}
+
+function moveAlertsUp() {
+  return new Promise(resolve => {
+    alertQueue.forEach((box, i) => {
+      const newTop = i === 0 ? 20 : alertQueue[i - 1].getBoundingClientRect().bottom + margin;
+      box.style.top = `${newTop}px`;
     });
-    alertBox.style.opacity = "0";
+    setTimeout(resolve, 300);
+  });
+}
+
+function fadeOutAlert(alertBox) {
+  return new Promise(resolve => {
+    alertBox.style.opacity = '0';
+    alertBox.addEventListener('transitionend', () => resolve(), { once: true });
+  });
 }
