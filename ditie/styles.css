@@ -82,7 +82,7 @@ body {
 
 @media (max-height: 750px) {
     #content {
-        max-height: 50%;
+        max-height: 60%;
     }
 }
 
