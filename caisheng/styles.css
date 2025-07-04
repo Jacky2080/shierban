@@ -163,3 +163,36 @@ body {
 h5 {
     margin: 5px;
 }
+
+.alert-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 175px;
+    height: 25px;
+    z-index: 99999;
+    background-color: white;
+    border-radius: 8px;
+    padding: 9px 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 1;
+    transition: opacity 0.3ms ease-in-out, top 0.3s ease-in-out;
+}
+
+.alert-icon svg {
+    display: block;
+    float: left;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    padding-top: 2px;
+}
+
+.alert-content {
+    line-height: 25px;
+}

@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
             nameIndex = this.textContent.trim().slice(0,4);
             const value = names[nameIndex];
             if(value === 0 || value === currentGrid.id) {
+                if(currentGrid.textContent) {
+                    names[currentGrid.textContent.trim().slice(0,4)] = 0;
+                }
                 currentGrid.textContent = this.textContent;
                 names[nameIndex] = currentGrid.id;
                 currentGrid = null;
