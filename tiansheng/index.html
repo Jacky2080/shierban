@@ -5,24 +5,33 @@
     <meta charset="UTF-8">
     <title>填生</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
 </head>
 <body>
     <div id="header">
         <a href="../" title="回到首页" class="home-links">填生</a>
-        <span><a href="../caisheng" class="links" style="margin-right: 30px;">猜生</a></span>
-        <span><a href="../caishi" class="links" style="margin-right: 30px;">猜师</a></span>
     </div>
+    <div id="lives">剩余机会</div>
     <div id="container">
+        <div id="top-text">
+            <div class="top-blank"></div>
+            <div id="top-text1" class="text top-text"></div>
+            <div id="top-text2" class="text top-text"></div>
+            <div class="top-blank"></div>
+        </div>
         <div class="row">
+            <div id="left-text1" class="left-text"></div>
             <div class="grid" id="grid1"></div>
             <div class="grid" id="grid2"></div>
+            <div class="right-blank"></div>
         </div>
         <div class="row">
+            <div id="left-text2" class="left-text"></div>
             <div class="grid" id="grid3"></div>
             <div class="grid" id="grid4"></div>
+            <div class="right-blank"></div>
         </div>
     </div>
+    <div id="again">重来</div>
     <div id="layout">
         <div id="content">
             <div id="contentHeader">
@@ -159,5 +168,7 @@
             </div>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
