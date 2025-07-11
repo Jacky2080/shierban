@@ -110,7 +110,6 @@ function generateQuestions() {
     l1.textContent = stuStates[states[2]];
     l2.textContent = stuStates[states[3]];
 
-    console.log(answers);
     correct = [false, false, false, false];
     localStorage.setItem('lives', 3);
     localStorage.setItem('correct', JSON.stringify(correct));
@@ -144,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function(){
         answers.push(intersect(s[states[1]], s[states[2]]));
         answers.push(intersect(s[states[0]], s[states[3]]));
         answers.push(intersect(s[states[1]], s[states[3]]));
-        console.log(answers);
+
         t1.textContent = stuStates[states[0]];
         t2.textContent = stuStates[states[1]];
         l1.textContent = stuStates[states[2]];
