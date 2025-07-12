@@ -27,7 +27,7 @@ const students = [
     {id: 1226, name: "茅肇中", strokes: 26, major: false, minor: true, concert: false, top: false, monitor: true, row: 4, unique: false, grid: 0},
     {id: 1227, name: "皮桓宇", strokes: 21, major: true, minor: false, concert: true, top: false, monitor: false, row: 5, unique: false, grid: 0},
     {id: 1228, name: "钱霖枫", strokes: 34, major: false, minor: true, concert: false, top: true, monitor: true, row: 3, unique: false, grid: 0},
-    {id: 1229, name: "瞿逸程", strokes: 41, major: true, minor: false, concert: false, top: false, monitor: true, row: 3, unique: true, grid: 0},
+    {id: 1229, name: "瞿逸程", strokes: 41, major: true, minor: false, concert: false, top: false, monitor: true, row: 3, unique: false, grid: 0},
     {id: 1230, name: "桑烨鑫", strokes: NaN, major: false, minor: false, concert: false, top: false, monitor: false, row: 6, unique: false, grid: 0},
     {id: 1231, name: "石昊洲", strokes: NaN, major: false, minor: false, concert: false, top: false, monitor: false, row: 6, unique: false, grid: 0},
     {id: 1232, name: "万仲杰", strokes: 17, major: false, minor: false, concert: true, top: false, monitor: false, row: 4, unique: true, grid: 0},
