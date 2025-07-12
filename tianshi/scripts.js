@@ -200,7 +200,7 @@ divs.forEach(div => {
         if (lives === 0) {
             closeLayout();
             lifeCount.style.color = '#FF4D4F';
-            lifeCount.textContent = '很遗憾，3次机会用尽了。';
+            lifeCount.textContent = '很遗憾，2次机会用尽了。';
             again.style.display = 'block';
             grids.forEach(grid => {
                 grid.removeEventListener('click', listenClick);

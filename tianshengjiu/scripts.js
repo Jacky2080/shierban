@@ -127,7 +127,6 @@ function generateQuestions() {
         'stuNum': stuNum,
         'states': states
     }))
-    console.log(answers);
 }
 
 function hasIntersect(arr1, arr2) {
@@ -180,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function(){
         generateQuestions();
         lifeCount.textContent = `剩余机会：${lives}`;
     }
-    console.log(answers);
 });
 
 const layout = document.getElementById("layout");
