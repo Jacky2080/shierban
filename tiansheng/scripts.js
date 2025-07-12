@@ -111,9 +111,9 @@ function generateQuestions() {
     l2.textContent = stuStates[states[3]];
 
     correct = [false, false, false, false];
-    localStorage.setItem('lives', 3);
-    localStorage.setItem('correct', JSON.stringify(correct));
-    localStorage.setItem('questions', JSON.stringify({
+    localStorage.setItem('ts_lives', 3);
+    localStorage.setItem('ts_correct', JSON.stringify(correct));
+    localStorage.setItem('ts_questions', JSON.stringify({
         'posNum': posNum,
         'stuNum': stuNum,
         'states': states
@@ -129,8 +129,8 @@ function intersect(arr1, arr2) {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    if (localStorage.getItem('questions')) {
-        const questions = JSON.parse(localStorage.getItem('questions'));
+    if (localStorage.getItem('ts_questions')) {
+        const questions = JSON.parse(localStorage.getItem('ts_questions'));
         const stuNum = questions['stuNum'];
         const posNum = questions['posNum'];
         const states = questions['states'];
@@ -149,16 +149,16 @@ document.addEventListener('DOMContentLoaded', function(){
         l1.textContent = stuStates[states[2]];
         l2.textContent = stuStates[states[3]];
         for (let i = 0; i < 4; i++) {
-            let grid = localStorage.getItem(`grid${i + 1}`);
+            let grid = localStorage.getItem(`sgrid${i + 1}`);
             if (grid) {
                 lock = document.getElementById(`grid${i + 1}`);
                 lock.textContent = grid;
                 students[Number(lock.textContent.trim().slice(2, 4)) - 1]['grid'] = lock.id;
             }
         }
-        lives = localStorage.getItem('lives');
+        lives = localStorage.getItem('ts_lives');
         lifeCount.textContent = `剩余机会：${lives}`;
-        correct = JSON.parse(localStorage.getItem('correct'));
+        correct = JSON.parse(localStorage.getItem('ts_correct'));
     } else {
         generateQuestions();
         lifeCount.textContent = `剩余机会：${lives}`;
@@ -177,12 +177,13 @@ again.addEventListener('click', function() {
     lives = 3;
     lifeCount.textContent = `剩余机会：${lives}`;
     correct = [false, false, false, false];
-    grids.forEach(function(grid) {students[Number(grid.textContent.trim().slice(2, 4)) - 1]['grid'] = 0;grid.textContent = '';});
+    grids.forEach(function(grid) {if(grid.textContent){students[Number(grid.textContent.trim().slice(2, 4)) - 1]['grid'] = 0;grid.textContent = '';}});
     lifeCount.style.color = 'black';
     grids.forEach(grid => {
         grid.removeEventListener('click', alertWin);
+        grid.removeEventListener('click', alertLose);
         grid.addEventListener('click', listenClick);
-    })
+    });
     again.style.display = 'none';
     generateQuestions();
 })
@@ -194,6 +195,7 @@ function listenClick() {
 }
 
 function alertWin() {warning('已经赢了');}
+function alertLose() {warning('已经结束了');}
 
 grids.forEach(grid => {
     grid.addEventListener('click', listenClick);
@@ -214,14 +216,14 @@ divs.forEach(div => {
                 currentGrid.textContent = this.textContent;
                 students[nameIndex]['grid'] = currentGrid.id;
                 correct[gridId - 1] = true;
-                localStorage.setItem(currentGrid.id, this.textContent.trim());
-                localStorage.setItem('correct', JSON.stringify(correct));
+                localStorage.setItem(`s${currentGrid.id}`, this.textContent.trim());
+                localStorage.setItem('ts_correct', JSON.stringify(correct));
                 currentGrid = null;
                 closeLayout();
             } else {
                 lives -= 1;
                 lifeCount.textContent = `剩余机会：${lives}`;
-                localStorage.setItem('lives', lives);
+                localStorage.setItem('ts_lives', lives);
                 warning('错误');
             }
         } else {
@@ -232,23 +234,34 @@ divs.forEach(div => {
             lifeCount.style.color = '#FF4D4F';
             lifeCount.textContent = '很遗憾，3次机会用尽了。';
             again.style.display = 'block';
+            grids.forEach(grid => {
+                grid.removeEventListener('click', listenClick);
+                grid.addEventListener('click', alertLose);
+            });
+            clearStorage();
         }
         if (correct.every((bool) => bool)) {
             again.style.display = 'block';
+            lifeCount.style.color = '#008000';
+            lifeCount.textContent = '恭喜你，你填对了！';
             grids.forEach(grid => {
                 grid.removeEventListener('click', listenClick);
                 grid.addEventListener('click', alertWin);
-            localStorage.removeItem('lives');
-            localStorage.removeItem('correct');
-            localStorage.removeItem('questions');
-            localStorage.removeItem('grid1');
-            localStorage.removeItem('grid2');
-            localStorage.removeItem('grid3');
-            localStorage.removeItem('grid4');
-            })
+            });
+            clearStorage();
         }
     });
 });
+
+function clearStorage() {
+    localStorage.removeItem('ts_lives');
+    localStorage.removeItem('ts_correct');
+    localStorage.removeItem('ts_questions');
+    localStorage.removeItem('sgrid1');
+    localStorage.removeItem('sgrid2');
+    localStorage.removeItem('sgrid3');
+    localStorage.removeItem('sgrid4');
+}
 
 function closeLayout() {
     layout.style.display = "none";
