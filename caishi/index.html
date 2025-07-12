@@ -3,159 +3,65 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>高一(12)班猜地铁版猜盐</title>
+    <title>高一(12)班版猜盐</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
 </head>
 <body>
     <div id="header">
         <a href="../" title="回到首页" class="home-links">猜师</a>
-        <span><a href="../caisheng" class="links" style="margin-right: 30px;">猜生</a></span>
-        <span><a href="../tiansheng" class="links" style="margin-right: 30px;">填生</a></span>
     </div>
+    <div id="lives">剩余机会</div>
     <div id="form">
         <p id="name">点击选择老师</p>
     </div>
     <div id="content">
         <div id="contentHeader">
-            <b>选择同学</b>
+            <b>选择老师</b>
         </div>
         <div id="choices">
             <button type="button" class="choice">
-                <span>李慧倩</span>
-            </button>
-            <button type="button" class="choice">
-                <span>许敏Shoom</span>
-            </button>
-            <button type="button" class="choice">
-                <span>李响</span>
-            </button>
-            <button type="button" class="choice">
-                <span>吴纯晨Man</span>
-            </button>
-            <button type="button" class="choice">
-                <span>梅宝君</span>
-            </button>
-            <button type="button" class="choice">
-                <span>肖飞Shelfy</span>
-            </button>
-            <button type="button" class="choice">
-                <span>楼文喆</span>
-            </button>
-            <button type="button" class="choice">
-                <span>朱成顺</span>
-            </button>
-            <button type="button" class="choice">
-                <span>顾炜</span>
-            </button>
-            <button type="button" class="choice">
-                <span>袁福生</span>
-            </button>
-            <button type="button" class="choice">
-                <span>周晓辉</span>
-            </button>
-            <button type="button" class="choice">
-                <span>闪德龙</span>
-            </button>
-            <button type="button" class="choice">
-                <span>崔梦姣</span>
-            </button>
-            <button type="button" class="choice">
-                <span>王莹</span>
-            </button>
-            <button type="button" class="choice">
-                <span>高超</span>
-            </button>
-            <button type="button" class="choice">
-                <span>杨婕</span>
-            </button>
-            <button type="button" class="choice">
-                <span>周永麒</span>
-            </button>
-            <button type="button" class="choice">
-                <span>郭曙光</span>
-            </button>
-            <button type="button" class="choice">
-                <span>陈容桂</span>
-            </button>
+                    <span>李慧倩</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>许敏</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>吴纯晨</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>梅宝君</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>肖飞</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>楼文喆</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>朱成顺</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>袁福生</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>崔梦娇</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>杨婕</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>方德鑫</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>王莹</span>
+                </button>
+                <button type="button" class="choice">
+                    <span>林婧婧</span>
+                </button>
         </div>
     </div>
-    <div id="results">
-        <div class="trys">
-            <div class="guesses">TA</div>
-            <div class="tip">
-                <div class="tips">
-                    <h5>tip1</h5>
-                    <div>content1</div>
-                </div>
-                <div class="tips">
-                    <h5>tip2</h5>
-                    <div>content2</div>
-                </div>
-                <div class="tips">
-                    <h5>tip3</h5>
-                    <div>content3</div>
-                </div>
-                <div class="tips">
-                    <h5>tip4</h5>
-                    <div>content4</div>
-                </div>
-                <div class="tips">
-                    <h5>tip5</h5>
-                    <div>content5</div>
-                </div>
-            </div>
-        </div>
-        <div class="trys">
-            <div class="guesses">TB</div>
-            <div class="tip">
-                <div class="tips">
-                    <h5>tip1</h5>
-                    <div>content1</div>
-                </div>
-                <div class="tips">
-                    <h5>tip2</h5>
-                    <div>content2</div>
-                </div>
-                <div class="tips">
-                    <h5>tip3</h5>
-                    <div>content3</div>
-                </div>
-                <div class="tips">
-                    <h5>tip4</h5>
-                    <div>content4</div>
-                </div>
-                <div class="tips">
-                    <h5>tip5</h5>
-                    <div>content5</div>
-                </div>
-            </div>
-        </div>
-        <div class="trys">
-            <div class="guesses">TC</div>
-            <div class="tip">
-                <div class="tips">
-                    <h5>tip1</h5>
-                    <div>content1</div>
-                </div>
-                <div class="tips">
-                    <h5>tip2</h5>
-                    <div>content2</div>
-                </div>
-                <div class="tips">
-                    <h5>tip3</h5>
-                    <div>content3</div>
-                </div>
-                <div class="tips">
-                    <h5>tip4</h5>
-                    <div>content4</div>
-                </div>
-                <div class="tips">
-                    <h5>tip5</h5>
-                    <div>content5</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="results"></div>
+    <div id="again">重来</div>
+    <script src="scripts.js"></script>
 </body>
 </html>

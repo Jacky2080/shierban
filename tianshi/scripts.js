@@ -79,14 +79,13 @@ function generateQuestions() {
     l2.textContent = teaStates[states[3]];
 
     correct = [false, false, false, false];
-    localStorage.setItem('tsh_lives', 3);
+    localStorage.setItem('tsh_lives', 2);
     localStorage.setItem('tsh_correct', JSON.stringify(correct));
     localStorage.setItem('tsh_questions', JSON.stringify({
         'day1': day1,
         'day2': day2,
         'states': states
     }))
-    console.log(answers);
 }
 
 function hasIntersect(arr1, arr2) {
@@ -130,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function(){
         correct = JSON.parse(localStorage.getItem('tsh_correct'));
     } else {
         generateQuestions();
+        lives = 2
         lifeCount.textContent = `剩余机会：${lives}`;
     }
-    console.log(answers)
 });
 
 const layout = document.getElementById("layout");
