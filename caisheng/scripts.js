@@ -117,8 +117,8 @@ again.addEventListener('click', function(){
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('starget')) {
         const token = JSON.parse(localStorage.getItem('starget'));
-        const id = Math.sqrt(token + 84) / 12;
-        target = students[id - 1];
+        const stuId = Math.sqrt(token + 84) / 12;
+        target = students[stuId - 1];
         const ifGuessed = JSON.parse(localStorage.getItem('cs_guessed'));
         if (ifGuessed) {
             guessed = ifGuessed;
@@ -164,7 +164,7 @@ function lose() {
     form.addEventListener('click', alertLose);
     again.style.display = 'block';
     lifeCount.style.color = '#FF4D4F';
-    lifeCount.textContent = '很遗憾，4次机会用尽了。';
+    lifeCount.textContent = '很遗憾，机会用尽了。';
     clearStorage();
 }
 
@@ -179,7 +179,7 @@ function createBlock(index, stuName) {
     const tip = document.createElement('div');
     tip.className = 'tip';
     for (key in guess) {
-        if (key == 'id') {continue;}
+        if (key == 'id' || key == 'name') {continue;}
         const tips = document.createElement('div');
         tips.className = 'tips';
         const h = document.createElement('h5');
