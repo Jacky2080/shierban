@@ -106,6 +106,37 @@ body {
     margin: 2px 2px 2px 5px;
 }
 
+@media (max-width: 550px) {
+    .grid {
+        width: calc(30vw - 4px);
+        height: calc(30vw - 4px);
+        font-size: 16px;
+    }
+
+    .row {
+        height: calc(30vw + 1px);
+    }
+
+    .top-text {
+        width: calc(30vw - 4px);
+        font-size: 14px;
+    }
+
+    .left-text {
+        width: 20vw;
+        height: calc(30vw - 4px);
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .right-blank {
+        width: 20vw;
+        height: calc(30vw - 4px);
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
 #again {
     float: right;
     padding: 3px 8px;
@@ -150,7 +181,7 @@ body {
     border-radius: 10px;
 }
 
-@media (max-height: 750px) {
+@media (max-width: 550px) {
     #content {
         max-height: 60%;
     }

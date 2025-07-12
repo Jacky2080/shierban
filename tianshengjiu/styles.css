@@ -106,32 +106,32 @@ body {
     margin: 2px 2px 2px 5px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 690px) {
     .grid {
-        width: calc(30vw - 4px);
-        height: calc(30vw - 4px);
+        width: calc(20vw - 4px);
+        height: calc(20vw - 4px);
         font-size: 16px;
     }
 
     .row {
-        height: calc(30vw + 1px);
+        height: calc(20vw + 1px);
     }
 
     .top-text {
-        width: calc(30vw - 4px);
+        width: calc(20vw - 4px);
         font-size: 14px;
     }
 
     .left-text {
         width: 20vw;
-        height: calc(30vw - 4px);
+        height: calc(20vw - 4px);
         font-size: 14px;
         margin: 0;
     }
 
     .right-blank {
         width: 20vw;
-        height: calc(30vw - 4px);
+        height: calc(20vw - 4px);
         font-size: 14px;
         margin: 0;
     }
@@ -170,7 +170,7 @@ body {
 #content {
     width: 520px;
     max-width: 75%;
-    height: auto;
+    height: 500px;
     position: relative;
     background-color: white;
     padding: 20px;
@@ -181,7 +181,7 @@ body {
     border-radius: 10px;
 }
 
-@media (max-width: 550px) {
+@media (max-height: 750px) {
     #content {
         max-height: 60%;
     }
@@ -221,6 +221,7 @@ body {
     font-size: 14px;
     text-align: center;
     float: left;
+    flex-grow: 1;
     border: 1px solid #DEDEDE;
     border-radius: 5px;
     background: none;
@@ -239,7 +240,7 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    width: 165px;
+    width: 175px;
     height: 25px;
     z-index: 99999;
     background-color: white;
