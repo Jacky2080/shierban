@@ -40,7 +40,7 @@ function generateQuestions() {
     teaStates[6] = `周${day2}没课`;
 
     const s6 = teachers.filter(t => t.class.includes(day1)).map(t => t.name);
-    const s7 = teachers.filter(t => !t.class.includes(day1)).map(t => t.name);
+    const s7 = teachers.filter(t => !t.class.includes(day2)).map(t => t.name);
     const s = Array.of(s1, s2, s3, s4, s5, s6, s7);    
 
     let answer = false;
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function(){
         teaStates[5] = `周${day1}有课`;
         teaStates[6] = `周${day2}没课`;
         const s6 = teachers.filter(t => t.class.includes(day1)).map(t => t.name);
-        const s7 = teachers.filter(t => !t.class.includes(day1)).map(t => t.name);
+        const s7 = teachers.filter(t => !t.class.includes(day2)).map(t => t.name);
         const s = Array.of(s1, s2, s3, s4, s5, s6, s7); 
         answers.push(intersect(s[states[0]], s[states[2]]));
         answers.push(intersect(s[states[1]], s[states[2]]));
